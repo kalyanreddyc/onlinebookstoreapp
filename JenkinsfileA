@@ -18,9 +18,12 @@ pipeline {
         }
       }
     }
-  stage('Build'){
+  stage('Build and verify){
     steps{
-     sh 'mvn clean package'
+      script{
+        buildandPublish('verify')
+    }
+    
   }
 }
 }
