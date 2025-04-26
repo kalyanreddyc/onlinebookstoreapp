@@ -18,5 +18,21 @@ pipeline {
         }
       }
     }
+  stage('Build and verify'){
+    steps{
+      script{
+        buildandPublish('verify')
+    }
+    
   }
+}
+stage('sonar'){
+    steps{
+      script{
+        sonarQualityChecks()
+    }
+    
+  }
+}
+}
 }
