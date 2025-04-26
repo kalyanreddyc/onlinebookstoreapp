@@ -2,8 +2,8 @@
 pipeline {
   agent any
   environment {
-    REPOSITORY = "https://github.com/kalyanreddyc/onlinebookstoreapp.git"
-    CREDENTIALS_ID = '636c6341-3a7a-491c-a744-67bf8769c54d'
+    REPOSITORY = "https://github.com/akhilreddyr/onlinebookstoreapp.git"
+    CREDENTIALS_ID = 'GitToken'
    }
   stages {
     stage('Checkout') {
