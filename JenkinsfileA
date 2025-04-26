@@ -18,7 +18,7 @@ pipeline {
         }
       }
     }
-  stage('Build and verify){
+  stage('Build and verify'){
     steps{
       script{
         buildandPublish('verify')
