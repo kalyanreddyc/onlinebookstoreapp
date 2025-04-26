@@ -1,0 +1,22 @@
+@Library('drilldevops-sharedlibrary@test') _
+pipeline {
+  agent any
+  environment {
+    REPOSITORY = "https://github.com/akhilreddyr/onlinebookstoreapp.git"
+    CREDENTIALS_ID = 'GitToken'
+   }
+  stages {
+    stage('Checkout') {
+      steps {
+        script {
+          def checkedOutBranch = checkBranch_demo()
+          gitCheckoutrepo(
+            repository: REPOSITORY,
+            credentialsId: CREDENTIALS_ID,
+            branch: checkedOutBranch
+          )
+        }
+      }
+    }
+  }
+}
